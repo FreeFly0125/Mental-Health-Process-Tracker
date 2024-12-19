@@ -22,7 +22,7 @@ export const createUser = async ({
   return await userRepostory.save(newUser);
 };
 
-export const getUser = async ({ email }): Promise<UserEntity | null> => {
+export const getUser = async (email): Promise<UserEntity | null> => {
   const userRepostory = AppDataSource.getRepository(UserEntity);
 
   const gettingUser: UserEntity | null = await userRepostory.findOne({
