@@ -1,8 +1,7 @@
 /** @format */
 
 import { backendSetup, databaseSetup } from "./setup";
-import { AppDataSource } from "./setup/datasource";
-import { Logger } from "./utilis/logger";
+import { Logger } from "./utilis";
 
 const setupSever = async () => {
   try {

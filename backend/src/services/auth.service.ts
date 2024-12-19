@@ -21,3 +21,13 @@ export const createUser = async ({
 
   return await userRepostory.save(newUser);
 };
+
+export const getUser = async ({ email }): Promise<UserEntity | null> => {
+  const userRepostory = AppDataSource.getRepository(UserEntity);
+
+  const gettingUser: UserEntity | null = await userRepostory.findOne({
+    where: { email },
+  });
+  if (gettingUser) return gettingUser;
+  return null;
+};

@@ -2,7 +2,7 @@
 
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
-import { Logger } from "@/utilis/logger";
+import { Logger } from "@/utilis";
 import router from "@/routers";
 
 export const backendSetup = () => {
