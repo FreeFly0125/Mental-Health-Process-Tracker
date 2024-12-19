@@ -5,14 +5,14 @@ import {
   SignedOut,
   SignOutButton,
   UserButton,
-  useAuth,
+  useSignIn,
   SignInButton,
 } from "@clerk/clerk-react";
 import "./App.css";
 
 function App() {
-  const { isSignedIn } = useAuth();
-  console.log("isSignedIn", isSignedIn);
+  const { isLoaded, signIn } = useSignIn();
+  console.log("signIn", signIn);
   return (
     <div>
       <SignedOut>
