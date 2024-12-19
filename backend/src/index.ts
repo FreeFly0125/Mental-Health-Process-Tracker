@@ -1,13 +1,25 @@
 /** @format */
 
-import { databaseSetup } from "./setup";
+import { backendSetup, databaseSetup } from "./setup";
 import { AppDataSource } from "./setup/datasource";
+import { Logger } from "./utilis/logger";
 
 const setupSever = async () => {
   try {
     await databaseSetup();
-    await AppDataSource.initialize();
-  } catch (err) {}
+    Logger.info("Database connected!");
+  } catch (err) {
+    Logger.error(err);
+    Logger.info("Failed to connect Database!");
+  }
+
+  try {
+    await backendSetup();
+    Logger.info("Server is running now!");
+  } catch (err) {
+    Logger.error(err);
+    Logger.info("Sever running failed!");
+  }
 };
 
 setupSever();
