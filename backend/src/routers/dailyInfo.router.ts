@@ -6,3 +6,4 @@ import { Router } from "express";
 export const logRouter = Router();
 
 logRouter.post("/", dailyInfoController.createlog);
+logRouter.get("/", dailyInfoController.getLog);
